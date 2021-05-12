@@ -172,6 +172,15 @@ public class Main extends Application {
         System.out.println("\nExport the data file");
         exportFile(exportNumFre); //Sending all frequencies in an array to export File method.
     }
+    
+    public static void fraudCheck(double fraud) {
+        if (fre1 > 29.0 || fre1 < 32.0) {
+            System.out.println("\nThe data indicates that fraud likely did not occur");
+        } else {
+            System.out.println("\nFraud likely occured");
+        }
+
+    }
                    
     /*
      * Amy, Iliyan 
