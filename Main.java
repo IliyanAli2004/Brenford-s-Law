@@ -118,7 +118,7 @@ public class Main { extends Application
 
         getFrequency(numCounter);
     }
-                   //Creating double fre for each number which will tell how often each number occured in the place of the first digit as a percentage
+    //Creating double fre for each number which will tell how often each number occured in the place of the first digit as a percentage
     static double fre1;
     static double fre2;
     static double fre3;
