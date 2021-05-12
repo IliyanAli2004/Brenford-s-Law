@@ -118,5 +118,60 @@ public class Main { extends Application
 
         getFrequency(numCounter);
     }
+                   //Creating double fre for each number which will tell how often each number occured in the place of the first digit as a percentage
+    static double fre1;
+    static double fre2;
+    static double fre3;
+    static double fre4;
+    static double fre5;
+    static double fre6;
+    static double fre7;
+    static double fre8;
+    static double fre9;
+
+    /* Done By: Iliyan, Amy
+     * Step 2: Get the frequency occurance of every first digit
+     * @param arr[] = Type: Double[]. Has the values of all the counters which mean how often each number occured as the first digit
+    */
+    public static void getFrequency(int[] arr) {
+        int total=0;
+        //This for loop itterates and finds out the total lines by adding up all the occurances. I chose to do it this was to make code reusable and to minimize hard coding.
+        for (int i=0; i<arr.length; i++){
+          total+= arr[i];
+        }
+
+        double[] numFrequency= new double[arr.length];
+
+        for(int i=0; i<arr.length; i++){
+          numFrequency[i]= arr[i];
+        }
+
+        System.out.println("");//blank line
+
+        DecimalFormat df = new DecimalFormat("##.#"); //This format will be used below for outputtuing this information to the terminal
+
+        for(int i=0; i<numFrequency.length; i++){
+          System.out.println("The frequency of "+(i+1)+" is "+df.format((numFrequency[i] * 100)/total) + "%.");
+        }
+        
+        fre1 = numFrequency[0]*1.0/total;
+        fre2 = numFrequency[1]*1.0/total; 
+        fre3 = numFrequency[2]*1.0/total; 
+        fre4 = numFrequency[3]*1.0/total; 
+        fre5 = numFrequency[4]*1.0/total; 
+        fre6 = numFrequency[5]*1.0/total; 
+        fre7 = numFrequency[6]*1.0/total; 
+        fre8 = numFrequency[7]*1.0/total; 
+        fre9 = numFrequency[8]*1.0/total; 
+
+        //Creating another array which has all the frequencies to pass onto other methods.
+        double[] exportNumFre={fre1, fre2, fre3, fre4, fre5, fre6, fre7, fre8, fre9};
+
+        fraudCheck(fre1); //Sending first digit frequency to fraud method
+
+        System.out.println("\nExport the data file");
+        exportFile(exportNumFre); //Sending all frequencies in an array to export File method.
+    }
+
                    
                  
